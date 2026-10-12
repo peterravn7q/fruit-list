@@ -30,7 +30,7 @@
 // Hint: Arrayet bruger [ ], hvert objekt bruger { }.
 // Husk komma mellem objekterne, og stav propertynavnene præcist.
 // ✏️ Skriv dit array her ↓
-const fruits = [
+const fruits = [apple, banana, orange, strawberry, kiwi] = [
     { name: "Apple", emoji: "🍎", color: "Red" },
     { name: "Banana", emoji: "🍌", color: "Yellow" },
     { name: "Orange", emoji: "🍊", color: "Orange" },
