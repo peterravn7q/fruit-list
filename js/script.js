@@ -30,7 +30,13 @@
 // Hint: Arrayet bruger [ ], hvert objekt bruger { }.
 // Husk komma mellem objekterne, og stav propertynavnene præcist.
 // ✏️ Skriv dit array her ↓
-
+const fruits = [
+    { name: "Apple", emoji: "🍎", color: "Red" },
+    { name: "Banana", emoji: "🍌", color: "Yellow" },
+    { name: "Orange", emoji: "🍊", color: "Orange" },
+    { name: "Strawberry", emoji: "🍓", color: "Red" },
+    { name: "Kiwi", emoji: "🥝", color: "Green" }
+];
 
 // 💬 Forklar forskellen mellem et array og et objekt.
 
@@ -46,7 +52,9 @@
 //    status-message | statusMessageElement
 //
 // ✏️ Skriv dine tre variabler her ↓
-
+const fruitListElement = document.getElementById("fruit-list");
+const toggleButtonElement = document.getElementById("toggle-fruits");
+const statusMessageElement = document.getElementById("status-message");
 
 // ------------------------------------------------------------
 // STEP 3: Byg frugtlisten med forEach og template literals
@@ -69,7 +77,13 @@
 // Hint: En template literal bruger backticks (`) og ${...}.
 //       += bevarer de elementer, du allerede har indsat.
 // ✏️ Skriv din forEach og template literal her ↓
-
+fruits.forEach(function (fruit) {
+    fruitListElement.innerHTML += `
+        <li class="fruit-item">
+            ${fruit.emoji} ${fruit.name} - ${fruit.color}
+        </li>
+    `;
+});
 
 // 💬 Hvorfor bruger vi += og ikke kun =?
 
@@ -99,7 +113,13 @@ function toggleFruitList() {
     //       - statusMessageElement skal vise "Fruit list is closed"
     //       Hint: Skift tekst med .textContent.
     // ✏️ Skriv if/else her ↓
-
+    if (isVisible) {
+        toggleButtonElement.textContent = "Close fruit list";
+        statusMessageElement.textContent = "Fruit list is open";
+    } else {
+        toggleButtonElement.textContent = "Show fruit list";
+        statusMessageElement.textContent = "Fruit list is closed";
+    };
 
     // ✅ Udleveret: Skjul statusbeskeden efter 2 sekunder.
     // Du skal IKKE skrive eller ændre denne del.
@@ -116,7 +136,7 @@ function toggleFruitList() {
 //       Ved klik skal toggleFruitList bruges som callback.
 //       Hint: Brug addEventListener og funktionsnavnet UDEN ().
 // ✏️ Skriv din kode her ↓
-
+toggleButtonElement.addEventListener("click", toggleFruitList);
 
 // ------------------------------------------------------------
 // SLUTTJEK
